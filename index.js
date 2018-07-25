@@ -67,7 +67,7 @@ function handleRequest(peer, seq, topic, args) {
 			resp.error = err
 		peer.send(resp, err => {
 			if (err) {
-//				console.error(err.toString())
+				//console.error(err.toString())
 			}
 		})
 	}
@@ -125,22 +125,6 @@ function _call(peer, topic, args) {
 	return task
 }
 
-function callMaster(topic, args, timeout) {
-	return _call(process, topic, args, timeout)
-}
-
-function callChild(child, topic, args, timeout) {
-	return _call(child, topic, args, timeout)
-}
-
-function onTopic(topic, func) {
-	handlers[topic] = func
-}
-
-function remove(topic) {
-	delete handlers[topic]
-}
-
 function clusterCall(peer) {
 	
 	let callingMaster = peer === 'master'
@@ -148,8 +132,8 @@ function clusterCall(peer) {
 		if (callingMaster)
 			throw new Error('To call worker from master, do it like: clusterCall(worker).myFuncOnChild(...)')
 	} else {
-		if (!callMaster)
-			throw new Error("To call master from worker, do it like: clusterCall('master').myFuncOnMaster(...)")
+		if (!callingMaster)
+			throw new Error('To call master from worker, do it like: clusterCall(\'master\').myFuncOnMaster(...)')
 	}
 	
 	return new Proxy({}, {

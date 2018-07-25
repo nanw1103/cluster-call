@@ -12,7 +12,8 @@
   "keywords": [
     "cluster",
     "rpc",
-	"cluster rpc"
+	"cluster rpc",
+	"IPC"
   ],
   "author": "nanw1103",
   "license": "MIT",
