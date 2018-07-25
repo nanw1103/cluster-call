@@ -11,7 +11,8 @@
   },
   "keywords": [
     "cluster",
-    "rpc"
+    "rpc",
+	"cluster rpc"
   ],
   "author": "nanw1103",
   "license": "MIT",
