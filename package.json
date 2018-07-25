@@ -1,6 +1,6 @@
 {
   "name": "cluster-call",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "RPC between cluster master and children",
   "main": "index.js",
   "directories": {
@@ -14,5 +14,13 @@
     "rpc"
   ],
   "author": "nanw1103",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanw1103/cluster-call.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nanw1103/cluster-call/issues"
+  },
+  "homepage": "https://github.com/nanw1103/cluster-call#readme"
 }
