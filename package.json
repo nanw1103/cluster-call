@@ -1,0 +1,18 @@
+{
+  "name": "cluster-call",
+  "version": "1.0.0",
+  "description": "RPC between cluster master and children",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/example-basic.js"
+  },
+  "keywords": [
+    "cluster",
+    "rpc"
+  ],
+  "author": "nanw1103",
+  "license": "MIT"
+}
