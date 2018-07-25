@@ -44,13 +44,17 @@ function handleRequest(peer, seq, topic, args) {
 		return
 	}
 	
-	let ret = h.apply(null, args)
-	if (ret instanceof Promise) {
-		ret
-			.then(data => response(null, data))
-			.catch(response)
-	} else {
-		response(null, ret)
+	try {
+		let ret = h.apply(null, args)
+		if (ret instanceof Promise) {
+			ret
+				.then(data => response(null, data))
+				.catch(response)
+		} else {
+			response(null, ret)
+		}
+	} catch (e) {
+		response(e.toString())
 	}
 	
 	function response(err, result) {
